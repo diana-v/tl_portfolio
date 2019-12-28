@@ -3,9 +3,9 @@
         <div>
             <v-toolbar>
                 <v-toolbar-title>
-                    <a href="/">
+                    <router-link to="/">
                         <v-img class="mr-3" src="@/assets/tl_logo.png" height="40px" width="50px"></v-img>
-                    </a>
+                    </router-link>
                 </v-toolbar-title>
                 <v-spacer></v-spacer>
                 <v-toolbar-items class="d-none d-md-block">
@@ -24,6 +24,8 @@
                         </template>
                         <v-list>
                             <v-list-item
+                                    class="nav-btn"
+                                    :to="item.link"
                                     v-for="(item, index) in menu"
                                     :key="index">
                                 <v-list-item-title>{{ item.title }}</v-list-item-title>
