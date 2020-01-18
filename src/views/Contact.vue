@@ -26,7 +26,7 @@
 
         <div class="contact-form">
             <form>
-                <v-text-field
+                <v-text-field class="contact-field"
                         v-model="name"
                         :error-messages="nameErrors"
                         :counter="10"
@@ -35,7 +35,7 @@
                         @input="$v.name.$touch()"
                         @blur="$v.name.$touch()"
                 ></v-text-field>
-                <v-text-field
+                <v-text-field class="contact-field"
                         v-model="email"
                         :error-messages="emailErrors"
                         label="E-mail"
@@ -43,7 +43,7 @@
                         @input="$v.email.$touch()"
                         @blur="$v.email.$touch()"
                 ></v-text-field>
-                <v-textarea
+                <v-textarea class="contact-field"
                         v-model="placeholder"
                         :rules="rules"
                         required
@@ -139,9 +139,14 @@
         margin-top: 40px
     }
 
+    .contact-field {
+        margin-top: 20px;
+    }
+
     .contact-section {
         text-align: start;
         width: 60%;
+        min-width: 90px;
         float: left;
         font-size: 18px;
         color: white;
@@ -166,6 +171,10 @@
         border-bottom: 3px solid white;
     }
 
+    pre {
+        margin-bottom: 0;
+    }
+
     pre.contact-section:nth-child(6) {
         height: 81px;
         overflow: hidden;
@@ -176,4 +185,23 @@
     a.contact-link:nth-child(2) {
         line-height: 100px;
     }
+
+@media screen and (max-width: 610px) {
+    .contact-form {
+        margin-top: 0px;
+        margin-left: 25%;
+    }
+
+    .contact-ways {
+        margin-left: 30%;
+    }
+
+    .contact-field {
+        margin-top: 0px;
+    }
+
+    .contact-icon {
+        padding-right: 30px;
+    }
+}
 </style>
