@@ -12,9 +12,12 @@
             {
               content: '',
               code: "\n" +
-                    "me = nameTomas ()\n" +
-                    "while(me.awake()):\n" +
-                    "    me.devOps()"
+                    "let tom = new DevOps('tom');\n" +
+                    "while(tom.awake()){\n" +
+                    "    tom.think();\n" +
+                    "    tom.consult();\n" +
+                    "    tom.work();\n" +
+                    "}"
             }
     ),
     mounted() {
@@ -38,7 +41,6 @@
     -webkit-box-shadow: none !important;
     box-shadow: #303030 !important;
     background: #303030 !important;
-    background: #303030 !important;
   }
 
   .v-application code {
@@ -47,7 +49,7 @@
   }
 
   .home-wrap {
-    margin: 20vh auto !important;
+    margin: 10vh auto !important;
     font-size: 20px !important;
     color: transparent !important;
   }
