@@ -2,54 +2,60 @@
     <a class="about">
         <h1 class="header">contact me:</h1>
         <div class="contact-ways">
-            <v-icon class="contact-icon" size="50">fab fa-github</v-icon>
-            <pre class="contact-section">
-                <a target="_blank" class="contact-link" href="https://github.com/tomaslesc">GitHub</a>
-            </pre>
+            <div class="contact-icon-section">
+                <a target="_blank" href="https://github.com/tomaslesc">
+                    <v-icon class="contact-icon" size="50">fab fa-github</v-icon>
+                </a>
+                <a target="_blank" href="https://www.linkedin.com/in/tomaslesc/">
+                    <v-icon class="contact-icon" size="50">fab fa-linkedin</v-icon>
+                </a>
+                <a v-on:click="clippy" v-on="on">
+                    <v-icon class="contact-icon" size="50">fas fa-envelope</v-icon>
+                </a>
+            </div>
 
-            <v-icon class="contact-icon" size="50">fab fa-linkedin</v-icon>
-            <pre class="contact-section">
-                <a target="_blank" class="contact-link" href="https://www.linkedin.com/in/tomaslesc/">LinkedIn</a>
-            </pre>
-
-            <v-icon class="contact-icon" size="50">fas fa-envelope</v-icon>
-            <pre class="contact-section">
-                <v-tooltip bottom>
-                    <template v-slot:activator="{ on }">
-                        <a class="contact-link" v-on:click="clippy" v-on="on">Gmail</a>
-                    </template>
-                <span>Click to copy my email address to your clipboard</span>
-                </v-tooltip>
-            </pre>
-            <input type="text" style="display:none" id="clipboard" value="tom@e0.lt">
+            <div class="contact-link-section">
+                <div class="contact-link-wrapper"><a target="_blank" class="contact-link"
+                                                     href="https://github.com/tomaslesc">GitHub</a></div>
+                <div class="contact-link-wrapper"><a target="_blank" class="contact-link"
+                                                     href="https://www.linkedin.com/in/tomaslesc/">LinkedIn</a></div>
+                <div class="contact-link-wrapper">
+                    <v-tooltip bottom>
+                        <template v-slot:activator="{ on }">
+                            <a class="contact-link" v-on:click="clippy" v-on="on">Gmail</a>
+                        </template>
+                        <span>Click to copy my email address to your clipboard</span>
+                    </v-tooltip>
+                    <input type="text" style="display:none" id="clipboard" value="tom@e0.lt"></div>
+            </div>
         </div>
 
         <div class="contact-form">
             <form>
                 <v-text-field class="contact-field"
-                        v-model="name"
-                        :error-messages="nameErrors"
-                        :counter="10"
-                        label="Name"
-                        required
-                        @input="$v.name.$touch()"
-                        @blur="$v.name.$touch()"
+                              v-model="name"
+                              :error-messages="nameErrors"
+                              :counter="10"
+                              label="Name"
+                              required
+                              @input="$v.name.$touch()"
+                              @blur="$v.name.$touch()"
                 ></v-text-field>
                 <v-text-field class="contact-field"
-                        v-model="email"
-                        :error-messages="emailErrors"
-                        label="E-mail"
-                        required
-                        @input="$v.email.$touch()"
-                        @blur="$v.email.$touch()"
+                              v-model="email"
+                              :error-messages="emailErrors"
+                              label="E-mail"
+                              required
+                              @input="$v.email.$touch()"
+                              @blur="$v.email.$touch()"
                 ></v-text-field>
                 <v-textarea class="contact-field"
-                        v-model="placeholder"
-                        :rules="rules"
-                        required
-                        auto-grow
-                        rows="1"
-                        label="Reason for contacting"
+                            v-model="placeholder"
+                            :rules="rules"
+                            required
+                            auto-grow
+                            rows="1"
+                            label="Reason for contacting"
                 ></v-textarea>
                 <v-btn class="mr-4" @click="submit">submit</v-btn>
                 <v-btn @click="clear">clear</v-btn>
@@ -119,7 +125,7 @@
                 this.select = null
             },
         }
-        };
+    };
 </script>
 
 <style>
@@ -128,7 +134,7 @@
         float: left;
         align-content: start;
         display: grid;
-        grid-template-columns: 40% 60%;
+        grid-template-columns: 30% 70%;
         grid-template-rows: auto auto 100px;
         margin-top: 40px;
     }
@@ -143,65 +149,84 @@
         margin-top: 20px;
     }
 
-    .contact-section {
-        text-align: start;
-        width: 60%;
-        min-width: 90px;
-        float: left;
-        font-size: 18px;
-        color: white;
-        white-space: pre-wrap; /* Since CSS 2.1 */
-        white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
-        white-space: -o-pre-wrap; /* Opera 7 */
-        word-wrap: break-word; /* Internet Explorer 5.5+ */
+    .contact-icon-section {
+        grid-column: 1;
     }
 
     .contact-icon {
         padding-left: 15%;
         float: left;
+        width: 100%;
+        height: 100px;
+    }
+
+    .contact-link-section {
+        grid-column: 2;
+        margin-top: 40px;
+        text-align: start;
     }
 
     .contact-link {
         text-decoration: none !important;
         color: white !important;
-        width: 70%;
+        width: 100%;
+    }
+
+    .contact-link-wrapper {
+        height: 100px;
     }
 
     .contact-link:hover {
         border-bottom: 3px solid white;
+        cursor: pointer;
     }
 
     pre {
         margin-bottom: 0;
     }
 
-    pre.contact-section:nth-child(6) {
-        height: 81px;
-        overflow: hidden;
-        display: ruby;
-        align-content: middle;
+    .v-application a {
+        cursor: auto;
     }
 
     a.contact-link:nth-child(2) {
         line-height: 100px;
     }
 
-@media screen and (max-width: 610px) {
-    .contact-form {
-        margin-top: 0px;
-        margin-left: 25%;
+    div.v-input:nth-child(1),
+    div.v-input:nth-child(2),
+    div.v-input:nth-child(3) {
+        min-height: 85px !important;
     }
 
-    .contact-ways {
-        margin-left: 30%;
-    }
+    @media screen and (max-width: 610px) {
+        .contact-form {
+            margin-top: 70px;
+            margin-left: 5%;
+            width: 60%;
+        }
 
-    .contact-field {
-        margin-top: 0px;
-    }
+        .contact-ways {
+            margin-left: 10%;
+            width: 10%;
+        }
 
-    .contact-icon {
-        padding-right: 30px;
+        .contact-field {
+            margin-top: 0;
+        }
+
+        .contact-icon {
+            padding-right: 30px;
+        }
+
+        .contact-link-section {
+            display: none;
+        }
+
+        div.v-input:nth-child(1),
+        div.v-input:nth-child(2),
+        div.v-input:nth-child(3) {
+            min-height: 100px !important;
+        }
     }
-}
 </style>

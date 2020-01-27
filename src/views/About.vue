@@ -6,50 +6,24 @@
         <div class="photo-section">
             <v-img src="@/assets/profie_photo.jpg" class="profile-img"/>
         </div>
-        <pre class="description-section">My name is Tomas. I am a Dev-Ops Engineer based in Lithuania. I am a seasoned expert that has introduced and deployed solutions that scale from thousands of users to millions of users. I specialise in web server infrastructure, continuous integration and delivery solutions, workload automatisation and optimisation.
-    </pre>
-        <pre class="expertise-section">
-      Experience:
-      Dev-Ops Engineer at NFQ
-      Feb 2019 - Present
-      PHP Programmer at Enigma Software
-      Dec 2012 - Feb 2019
-
-      Education:
-      Kaunas University of Technology
-      BSc Information Technology
-      2012-2016
-
-      Certifications:
-      Zend Certified PHP Engineer
-      Issued Jan 2017
-      Credential ID: <a target="_blank" href="https://www.zend-zce.com/en/yellow-pages/ZEND029620">ZEND29620</a>
-    </pre>
-        <pre class="expertise-section-855">
-      Experience:
-      Dev-Ops Engineer at
-      NFQ
-      Feb 2019 - Present
-      PHP Programmer at
-      Enigma Software
-      Dec 2012 - Feb 2019
-        </pre>
-        <pre class="expertise-section-855">
-      Education:
-      Kaunas University
-      of Technology
-      BSc Information
-      Technology
-      2012-2016
-        </pre>
-        <pre class="expertise-section-855">
-      Certifications:
-      Zend Certified
-      PHP Engineer
-      Issued Jan 2017
-      Credential ID:
-      <a target="_blank" href="https://www.zend-zce.com/en/yellow-pages/ZEND029620">ZEND29620</a>
-    </pre>
+        <p class="description-section">My name is Tomas. I am a Dev-Ops Engineer based in Lithuania. I am a seasoned expert that has introduced and deployed solutions that scale from thousands of users to millions of users. I specialise in web server infrastructure, continuous integration and delivery solutions, workload automatisation and optimisation.
+    </p>
+        <div class="expertise-section">
+        <ul>
+            <li>Experience:</li>
+            <li>Dev-Ops Engineer at NFQ: Feb 2019 - Present</li>
+            <li>PHP Programmer at Enigma Software: Dec 2012 - Feb 2019</li>
+        </ul>
+        <ul>
+            <li>Education:</li>
+            <li>Kaunas University of Technology</li>
+            <li>BSc Information Technology: 2012-2016 </li>
+        </ul>
+         <ul>
+             <li>Certifications:</li>
+             <li>Zend Certified PHP Engineer: Issued Jan 2017, Credential ID: <a target="_blank" href="https://www.zend-zce.com/en/yellow-pages/ZEND029620">ZEND29620</a></li>
+         </ul>
+      </div>
     </div>
 </template>
 
@@ -84,6 +58,11 @@
         word-wrap: break-word; /* Internet Explorer 5.5+ */
     }
 
+    ul {
+        list-style: none;
+
+    }
+
     .expertise-section {
         width: 35%;
         float: left;
@@ -98,16 +77,7 @@
         word-wrap: break-word; /* Internet Explorer 5.5+ */
     }
 
-    @media screen and (min-width:855px) {
-        .expertise-section-855 {
-            display: none;
-        }
-    }
     @media screen and (max-width:855px) {
-        .expertise-section {
-            display: none;
-        }
-
         .description-section {
             width: 60%;
             padding-top: 7%;
@@ -118,29 +88,30 @@
             margin-left: 40px;
         }
 
-        .expertise-section-855 {
-            width: 30%;
-            float: left;
+        .expertise-section {
+            margin-left: 15%;
+            margin-right: 10%;
+            display: block;
+            border-top: 3px solid white;
+            border-left: none;
+            padding-top: 30px;
+            width: 70%;
             height: 100%;
-            text-align: start;
             color: white;
             white-space: pre-wrap; /* Since CSS 2.1 */
             white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
             white-space: -o-pre-wrap; /* Opera 7 */
             word-wrap: break-word; /* Internet Explorer 5.5+ */
-            margin-left: 20px;
         }
     }
     @media screen and (max-width:600px) {
         .expertise-section {
             display: initial;
-            width: 100%;
-            margin-left: 40px;
+            width: 70%;
+            margin-left: 10%;
+            margin-right: 10%;
             padding-top: 30px;
             border: none;
-        }
-        .expertise-section-855 {
-            display: none;
         }
         .description-section {
             border-bottom: 2px solid white;

@@ -117,6 +117,15 @@
         }
     }
 
+    @media screen and (min-width: 1300px) {
+        .blog-container {
+            width: 30%;
+            margin: 0 20px;
+            padding: 20px;
+            /*float: unset;*/
+        }
+    }
+
     .blog-card {
         text-decoration: none !important;
         width: 600px;
