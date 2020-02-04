@@ -2,86 +2,19 @@
     <div class="blog">
         <h1 class="header">blog:</h1>
         <div class="blog-wrap">
-        <div class="blog-container">
-            <v-card to="/blog/1" link hover
+        <div class="blog-container" v-for="post in posts" v-bind:key="post.id">
+            <v-card v-bind:to="getBlogURL(post.id)" link hover
                     class="blog-card">
                 <v-img
                         class="white--text align-end"
                         height="200px"
-                        src="https://cdn.pixabay.com/photo/2018/09/03/22/05/programming-3652497_1280.jpg"
+                       v-bind:src="getImageURL(post.image)"
                 >
                 </v-img>
-                <v-card-title class="blog-card-title">First Blog Entry</v-card-title>
-                <v-card-subtitle class="pb-0 blog-card-subtitle">November 10 2020</v-card-subtitle>
+                <v-card-title class="blog-card-title">{{post.title}}</v-card-title>
+                <v-card-subtitle class="pb-0 blog-card-subtitle">{{post.date.date}}</v-card-subtitle>
                 <v-card-text class="text--primary">
-                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin viverra turpis eget congue. Nulla a metus a mi venenatis placerat...</div>
-                </v-card-text>
-            </v-card>
-        </div>
-
-        <div class="blog-container">
-            <v-card to="/blog/1" link hover
-                    class="blog-card">
-                <v-img
-                        class="white--text align-end"
-                        height="200px"
-                        src="https://cdn.pixabay.com/photo/2018/09/03/22/05/programming-3652497_1280.jpg"
-                >
-                </v-img>
-                <v-card-title class="blog-card-title">First Blog Entry</v-card-title>
-                <v-card-subtitle class="pb-0 blog-card-subtitle">November 10 2020</v-card-subtitle>
-                <v-card-text class="text--primary">
-                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin viverra turpis eget congue. Nulla a metus a mi venenatis placerat...</div>
-                </v-card-text>
-            </v-card>
-        </div>
-        <div class="blog-container">
-            <v-card to="/blog/1" link hover
-                    class="blog-card">
-                <v-img
-                        class="white--text align-end"
-                        height="200px"
-                        src="https://cdn.pixabay.com/photo/2018/09/03/22/05/programming-3652497_1280.jpg"
-                >
-                </v-img>
-                <v-card-title class="blog-card-title">First Blog Entry</v-card-title>
-                <v-card-subtitle class="pb-0 blog-card-subtitle">November 10 2020</v-card-subtitle>
-                <v-card-text class="text--primary">
-                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin viverra turpis eget congue. Nulla a metus a mi venenatis placerat...</div>
-                </v-card-text>
-            </v-card>
-        </div>
-
-        <div class="blog-container">
-            <v-card to="/blog/1" link hover
-                    class="blog-card">
-                <v-img
-                        class="white--text align-end"
-                        height="200px"
-                        src="https://cdn.pixabay.com/photo/2018/09/03/22/05/programming-3652497_1280.jpg"
-                >
-                </v-img>
-                <v-card-title class="blog-card-title">First Blog Entry</v-card-title>
-                <v-card-subtitle class="pb-0 blog-card-subtitle">November 10 2020</v-card-subtitle>
-                <v-card-text class="text--primary">
-                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin viverra turpis eget congue. Nulla a metus a mi venenatis placerat...</div>
-                </v-card-text>
-            </v-card>
-        </div>
-
-        <div class="blog-container">
-            <v-card to="/blog/1" link hover
-                    class="blog-card">
-                <v-img
-                        class="white--text align-end"
-                        height="200px"
-                        src="https://cdn.pixabay.com/photo/2018/09/03/22/05/programming-3652497_1280.jpg"
-                >
-                </v-img>
-                <v-card-title class="blog-card-title">First Blog Entry</v-card-title>
-                <v-card-subtitle class="pb-0 blog-card-subtitle">November 10 2020</v-card-subtitle>
-                <v-card-text class="text--primary">
-                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sollicitudin viverra turpis eget congue. Nulla a metus a mi venenatis placerat...</div>
+                    <div>{{post.content}}</div>
                 </v-card-text>
             </v-card>
         </div>
@@ -91,8 +24,29 @@
 
 <script>
     export default {
+        data: () => (
+            {
+                posts: []
+            }
+        ),
         mounted() {
-            // alert(this.$route.params.id)
+            this.$http({ method: "GET", "url": `${this.$backend}/api/blog` }).then(result => {
+                this.posts = result.data;
+            }, error => {
+                console.error(error);
+            });
+        },
+        methods:{
+            getImageURL(link){
+                if (link==null) {
+                    return "https://cdn.pixabay.com/photo/2018/09/03/22/05/programming-3652497_1280.jpg";
+                } else {
+                    return link;
+                }
+            },
+            getBlogURL(id){
+                return `/blog/${id}`;
+            }
         },
     }
 </script>

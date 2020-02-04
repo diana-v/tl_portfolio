@@ -13,6 +13,7 @@ import "prismjs/components/prism-scss.min";
 import "prismjs/plugins/autolinker/prism-autolinker.min";
 import "prismjs/plugins/autolinker/prism-autolinker.css";
 import Prism from "vue-prism-component";
+import axios from "axios";
 
 Vue.component("prism", Prism);
 Vue.config.productionTip = false;
@@ -20,6 +21,9 @@ Vue.use(BootstrapVue);
 Vue.use(TooltipPlugin);
 
 Vue.use(vuetify);
+
+Vue.prototype.$http = axios;
+Vue.prototype.$backend = 'http://localhost:8000';
 
 new Vue({
   router,
