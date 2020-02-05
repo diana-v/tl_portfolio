@@ -14,7 +14,9 @@ import "prismjs/plugins/autolinker/prism-autolinker.min";
 import "prismjs/plugins/autolinker/prism-autolinker.css";
 import Prism from "vue-prism-component";
 import axios from "axios";
+import vueHeadful from 'vue-headful';
 
+Vue.component('vue-headful', vueHeadful);
 Vue.component("prism", Prism);
 Vue.config.productionTip = false;
 Vue.use(BootstrapVue);
@@ -23,7 +25,7 @@ Vue.use(TooltipPlugin);
 Vue.use(vuetify);
 
 Vue.prototype.$http = axios;
-Vue.prototype.$backend = 'http://localhost:8000';
+Vue.prototype.$backend = process.env.VUE_APP_BACKEND_URL;
 
 new Vue({
   router,

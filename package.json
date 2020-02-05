@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --mode prod",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -16,6 +16,7 @@
     "prismjs": "^1.19.0",
     "prismjs-tomorrow-theme": "0.0.1",
     "vue": "^2.6.11",
+    "vue-headful": "^2.1.0",
     "vue-material-design-icons": "^4.4.0",
     "vue-prism-component": "^1.1.1",
     "vue-router": "^3.1.3",
