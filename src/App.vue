@@ -46,8 +46,7 @@
         data: () => ({
             menu: [
                 {title: 'about', link: '/about'},
-                {title: 'featured', link: '/featured'},
-                {title: 'portfolio', link: '/portfolio'},
+                {title: 'skills', link: '/skills'},
                 {title: 'blog', link: '/blog'},
                 {title: 'contact', link: '/contact'},
             ]
