@@ -48,8 +48,7 @@
 
     @media screen and (max-width: 566px) {
         .services-title {
-            border-bottom: 3px solid #247ec6;
-            width: 75%;
+            color: #247ec6;
         }
     }
 </style>
