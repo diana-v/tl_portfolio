@@ -47,6 +47,7 @@
             menu: [
                 {title: 'about', link: '/about'},
                 {title: 'skills', link: '/skills'},
+                {title: 'services', link: '/services'},
                 {title: 'blog', link: '/blog'},
                 {title: 'contact', link: '/contact'},
             ]

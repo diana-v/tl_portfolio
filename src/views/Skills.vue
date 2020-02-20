@@ -10,7 +10,7 @@
         <div class="timeline-container">
         <div>
             <v-timeline :reverse="reverse" :dense="$vuetify.breakpoint.smAndDown">
-                <v-timeline-item
+                <v-timeline-item class="timeline-item"
                         v-for="n in timeline"
                         :key="n"
                 >
@@ -32,6 +32,28 @@
         margin-left: 30px;
     }
 
+    .timeline-item {
+        -webkit-animation: 3s ease 0s normal forwards 1 fadein;
+        animation: 3s ease 0s normal forwards 1 fadein;
+    }
+    @keyframes fadein{
+        0% { opacity:0; }
+        66% { opacity:0; }
+        100% { opacity:1; }
+    }
+
+    @-webkit-keyframes fadein {
+        0% {
+            opacity: 0;
+        }
+        66% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
     .timeline-card {
         text-align: start;
     }
@@ -51,7 +73,7 @@
     export default {
         data: () => ({
             reverse: true,
-            timeline: [
+            placeholder: [
                 {
                     title: 'AutoITScript',
                     year: '2012',
@@ -119,7 +141,21 @@
                     content: 'Lightweight implementation of CI&CD\n' +
                         'Webserver hosting the content listening to webhooks for update, used for fast prototyping and self-hosted third party services.'
                 },
-            ]
+            ],
+            timeline: []
         }),
-    }
+    mounted(){
+            setTimeout(this.addMoreCode)
+        },
+        methods: {
+            addMoreCode: function () {
+                if (this.placeholder.length == 0){
+                    return
+                }
+                this.timeline.push(this.placeholder[0]);
+                this.placeholder.splice(0, 1);
+                setTimeout(this.addMoreCode, 500)
+            }
+        }
+    };
 </script>
