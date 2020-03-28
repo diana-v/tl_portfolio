@@ -81,13 +81,16 @@
 </template>
 
 <script>
-    // import {validationMixin} from "vuelidate";
+    import {validationMixin} from "vuelidate";
     import {required, maxLength, minLength, email} from 'vuelidate/lib/validators'
 
     export default {
         name: "app",
+
+        mixins: [validationMixin],
+
         validations: {
-            name: {required, maxLength: maxLength(10)},
+            name: {required, maxLength: maxLength(30)},
             email: {required, email},
             message: {required, minLength: minLength(20)},
         },
@@ -142,7 +145,7 @@
             nameErrors() {
                 const errors = [];
                 if (!this.$v.name.$dirty) return errors;
-                !this.$v.name.maxLength && errors.push('Name must be at most 10 characters long');
+                !this.$v.name.maxLength && errors.push('Name must be at most 30 characters long');
                 !this.$v.name.required && errors.push('Name is required.');
                 return errors
             },
