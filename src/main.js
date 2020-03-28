@@ -26,6 +26,7 @@ Vue.use(vuetify);
 
 Vue.prototype.$http = axios;
 Vue.prototype.$backend = process.env.VUE_APP_BACKEND_URL;
+Vue.prototype.$contact_url = process.env.VUE_APP_CONTACT_URL;
 
 new Vue({
   router,

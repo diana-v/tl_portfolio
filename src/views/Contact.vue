@@ -33,7 +33,8 @@
                         </template>
                         <span>Click to copy my email address to your clipboard</span>
                     </v-tooltip>
-                    <input type="text" style="display:none" id="clipboard" value="tom@e0.lt"></div>
+                    <input type="email" style="display:none" id="clipboard" value="tom@e0.lt">
+                </div>
             </div>
         </div>
 
@@ -42,7 +43,7 @@
                 <v-text-field class="contact-field"
                               v-model="name"
                               :error-messages="nameErrors"
-                              :counter="10"
+                              :counter="30"
                               label="Name"
                               required
                               @input="$v.name.$touch()"
@@ -57,81 +58,109 @@
                               @blur="$v.email.$touch()"
                 ></v-text-field>
                 <v-textarea class="contact-field"
-                            v-model="placeholder"
-                            :rules="rules"
+                            v-model="message"
                             required
                             auto-grow
                             rows="1"
                             label="Reason for contacting"
+                            :error-messages="messageErrors"
+                            @input="$v.message.$touch()"
+                            @blur="$v.message.$touch()"
                 ></v-textarea>
-                <v-btn class="mr-4" @click="submit">submit</v-btn>
+                <v-btn class="mr-4" @click="submit_message">submit</v-btn>
                 <v-btn @click="clear">clear</v-btn>
             </form>
+            <div class="contact-alert">
+                <v-alert v-if="c_error" dense type="error">{{c_error_msg}}</v-alert>
+                <v-alert v-if="c_success" dense type="success">
+                    Your message was successfully sent.
+                </v-alert>
+            </div>
         </div>
     </a>
 </template>
 
 <script>
-    import {required, maxLength, email} from 'vuelidate/lib/validators'
+    // import {validationMixin} from "vuelidate";
+    import {required, maxLength, minLength, email} from 'vuelidate/lib/validators'
 
     export default {
         name: "app",
         validations: {
             name: {required, maxLength: maxLength(10)},
             email: {required, email},
+            message: {required, minLength: minLength(20)},
         },
 
         data: () => (
             {
-                name: '',
-                email: '',
-                rules: [
-                    value => !!value || 'Required.',
-                    value => (value || '').length >= 20 || 'Min 20 characters',
-                ]
+                name: null,
+                email: null,
+                message: null,
+                c_error: false,
+                c_success: false,
+                c_error_msg: null,
+                on: false,
             }
         ),
+        methods: {
+            submit_message() {
+                this.$v.$touch();
+                if (this.$v.$invalid) {
+                    this.c_error = true;
+                    this.c_error_msg = "An error occurred please try again.";
+                    return
+                }
+                this.$http.post(this.$contact_url, {
+                    name: this.name,
+                    email: this.email,
+                    message: this.message})
+                    .then(()=> {
+                        this.c_error = false;
+                        this.c_success = true;
+                    })
+                    .catch((error)=> {
+                        this.c_error = true;
+                        this.c_error_msg = error.response.data;
+                    })
+            },
+            clear() {
+                this.$v.$reset();
+                this.name = '';
+                this.email = '';
+                this.select = null
+            },
+
+            clippy: function () {
+                var copyText = document.getElementById("clipboard");
+                copyText.select();
+                navigator.clipboard.writeText(copyText.value);
+                alert("My email address has been copied to your clipboard! I'll be waiting to hear from you.");
+            },
+        },
         computed: {
             nameErrors() {
-                const errors = []
-                if (!this.$v.name.$dirty) return errors
-                !this.$v.name.maxLength && errors.push('Name must be at most 10 characters long')
-                !this.$v.name.required && errors.push('Name is required.')
+                const errors = [];
+                if (!this.$v.name.$dirty) return errors;
+                !this.$v.name.maxLength && errors.push('Name must be at most 10 characters long');
+                !this.$v.name.required && errors.push('Name is required.');
                 return errors
             },
             emailErrors() {
-                const errors = []
-                if (!this.$v.email.$dirty) return errors
-                !this.$v.email.email && errors.push('Must be valid e-mail')
-                !this.$v.email.required && errors.push('E-mail is required')
+                const errors = [];
+                if (!this.$v.email.$dirty) return errors;
+                !this.$v.email.email && errors.push('Must be valid e-mail');
+                !this.$v.email.required && errors.push('E-mail is required');
+                return errors
+            },
+            messageErrors() {
+                const errors = [];
+                if (!this.$v.message.$dirty) return errors;
+                !this.$v.message.minLength && errors.push('Please type your message.');
+                !this.$v.message.required && errors.push('Message is required.');
                 return errors
             },
         },
-
-        methods: {
-            clippy: function () {
-                /* Get the text field */
-                var copyText = document.getElementById("clipboard");
-                //
-                // /* Select the text field */
-                copyText.select();
-
-                /* Copy the text inside the text field */
-                document.execCommand("copy");
-
-                /* Alert the copied text */
-                alert("My email address has been copied to your clipboard! I'll be waiting to hear from you.");
-            },
-            submit() {
-                this.$v.$touch()
-            },
-            clear() {
-                this.$v.$reset()
-                this.name = ''
-                this.email = ''
-                this.select = null
-            },
-        }
     };
 </script>
 
@@ -186,6 +215,10 @@
     .contact-link:hover {
         border-bottom: 3px solid white;
         cursor: pointer;
+    }
+
+    .contact-alert {
+        padding-top: 30px;
     }
 
     pre {
