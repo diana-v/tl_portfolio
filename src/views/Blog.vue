@@ -1,9 +1,5 @@
 <template>
     <div class="blog">
-        <head>
-            <vue-headful title="Blog"/>
-        </head>
-
         <h1 class="header">blog:</h1>
         <main class="blog-wrap">
             <section class="blog-container" v-for="post in posts" v-bind:key="post.id">

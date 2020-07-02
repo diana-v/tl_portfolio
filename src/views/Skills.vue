@@ -1,8 +1,5 @@
 <template>
     <div class="about">
-        <head>
-            <vue-headful title="Skills"/>
-        </head>
         <main class="timeline-container">
             <v-timeline :reverse="reverse" :dense="$vuetify.breakpoint.smAndDown">
                 <v-timeline-item class="timeline-item"

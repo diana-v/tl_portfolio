@@ -1,8 +1,5 @@
 <template>
     <div>
-        <head>
-            <vue-headful title="Blog Entry"/>
-        </head>
         <h1 class="blog-header">{{entry.title}}</h1>
         <h4 class="blog-subheader">{{entry.date.date}}</h4>
         <figure class="blog-entry-image-container">

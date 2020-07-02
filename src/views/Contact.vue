@@ -1,8 +1,5 @@
 <template>
     <div class="about">
-        <head>
-            <vue-headful title="Contact"/>
-        </head>
         <h1 class="header">contact me:</h1>
         <main class="contact-ways">
             <section class="contact-icon-section">

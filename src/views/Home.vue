@@ -1,8 +1,5 @@
 <template>
   <pre class="home-wrap">
-    <head>
-        <vue-headful title="Home"/>
-    </head>
     <prism class="home-content" language="js">
       {{ content }}
     </prism>
@@ -43,7 +40,7 @@
   .home-content {
     -webkit-box-shadow: none !important;
     box-shadow: #303030 !important;
-    background: #303030 !important;
+    background: transparent !important;
   }
 
   .v-application code {

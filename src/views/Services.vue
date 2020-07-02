@@ -1,8 +1,5 @@
 <template>
     <div>
-    <head>
-        <vue-headful title="About"/>
-    </head>
         <h1 class="header">services:</h1>
         <main class="container services-container">
             <section class="row services-row">

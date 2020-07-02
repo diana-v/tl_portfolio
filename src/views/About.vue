@@ -1,8 +1,5 @@
 <template>
     <div>
-        <head>
-            <vue-headful title="About"/>
-        </head>
         <header>
             <h1 class="header">about me:</h1>
         </header>
