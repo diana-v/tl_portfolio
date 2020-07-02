@@ -21,7 +21,7 @@
                                    v-on="on"
                                    aria-label="Menu"
                             >
-                                <v-icon class="material-icons">menu_open</v-icon>
+                                <font-awesome-icon :icon="['fas', 'list']" class="menu-icon" alt="Menu"/>
                             </v-btn>
                         </template>
                         <v-list>
@@ -86,5 +86,10 @@
 
     .nav-btn:hover {
         text-decoration: none;
+    }
+
+    .menu-icon {
+        color: #ffffff;
+        font-size: 20px;
     }
 </style>

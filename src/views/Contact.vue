@@ -4,13 +4,13 @@
         <main class="contact-ways">
             <section class="contact-icon-section">
                 <a target="_blank" href="https://github.com/tomaslesc" aria-label="Github link" rel="noreferrer">
-                    <v-icon class="contact-icon" size="50">fab fa-github</v-icon>
+                    <font-awesome-icon :icon="['fab', 'github']" class="icon" alt="Github"/>
                 </a>
                 <a target="_blank" href="https://www.linkedin.com/in/tomaslesc/" aria-label="LinkedIn link" rel="noreferrer">
-                    <v-icon class="contact-icon" size="50">fab fa-linkedin</v-icon>
+                    <font-awesome-icon :icon="['fab', 'linkedin']" class="icon" alt="LinkedIn"/>
                 </a>
                 <a v-on:click="clippy" v-on="on" aria-label="Press here to copy my email to clipboard">
-                    <v-icon class="contact-icon" size="50">fas fa-envelope</v-icon>
+                    <font-awesome-icon :icon="['fas', 'envelope']" class="icon" alt="Envelope"/>
                 </a>
             </section>
 
@@ -186,11 +186,12 @@
         grid-column: 1;
     }
 
-    .contact-icon {
-        padding-left: 15%;
+    .icon {
         float: left;
-        width: 100%;
-        height: 100px;
+        color: #ffffff;
+        font-size: 70px;
+        margin: 20px 10px 5px 30%;
+        padding-right: 20px;
     }
 
     .contact-link-section {
