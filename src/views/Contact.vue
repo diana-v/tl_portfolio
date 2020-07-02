@@ -191,7 +191,7 @@
         color: #ffffff;
         font-size: 70px;
         margin: 20px 10px 5px 30%;
-        padding-right: 20px;
+        padding-right: 25px;
     }
 
     .contact-link-section {
