@@ -47,7 +47,6 @@
 
     .timeline-card {
         text-align: start;
-        background-color: #383838 !important;
     }
 
     .timeline-text {
