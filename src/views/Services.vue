@@ -3,19 +3,19 @@
         <h1 class="header">services:</h1>
         <main class="container services-container">
             <section class="row services-row">
-                <h5 class="col-sm-4 services-title">Game Servers:</h5>
+                <div class="col-sm-4 services-title">Game Servers:</div>
                 <p class="col-sm-8">quake.e0.lt and mc.e0.lt</p>
             </section>
             <section class="row services-row">
-                <h5 class="col-sm-4 services-title">CI/CD:</h5>
+                <div class="col-sm-4 services-title">CI/CD:</div>
                 <p class="col-sm-8">gitlab.e0.lt</p>
             </section>
             <section class="row services-row">
-                <h5 class="col-sm-4 services-title">Monitoring (WIP):</h5>
+                <div class="col-sm-4 services-title">Monitoring (WIP):</div>
                 <p class="col-sm-8">logs.e0.lt</p>
             </section>
             <section class="row services-row">
-                <h5 class="col-sm-4 services-title">URL Shortener (WIP):</h5>
+                <div class="col-sm-4 services-title">URL Shortener (WIP):</div>
                 <p class="col-sm-8">u.e0.lt</p>
             </section>
         </main>
