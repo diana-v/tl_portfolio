@@ -29,7 +29,6 @@ import(/* webpackPreload: true */ "./views/Contact");
 import(/* webpackPreload: true */ "./views/Home");
 import(/* webpackPreload: true */ "./views/Services");
 import(/* webpackPreload: true */ "./views/Skills");
-import(/* webpackPreload: true */ "./App");
 
 Vue.use(vuetify);
 
