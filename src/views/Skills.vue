@@ -38,7 +38,7 @@
             opacity: 0;
         }
         66% {
-            opacity: 0;
+            opacity: 1;
         }
         100% {
             opacity: 1;

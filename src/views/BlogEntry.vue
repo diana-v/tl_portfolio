@@ -46,7 +46,6 @@
 <style>
     .blog-header {
         text-align: center;
-        /*padding-left: 60px;*/
         padding-top: 30px;
         color: white;
     }

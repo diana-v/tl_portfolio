@@ -67,7 +67,6 @@
 
     ul {
         list-style: none;
-
     }
 
     .expertise-section {

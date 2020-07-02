@@ -79,7 +79,6 @@
             width: 30%;
             margin: 0 20px;
             padding: 20px;
-            /*float: unset;*/
         }
     }
 

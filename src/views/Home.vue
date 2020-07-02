@@ -38,19 +38,11 @@
 
 <style>
   .home-content {
-    -webkit-box-shadow: none !important;
-    box-shadow: #303030 !important;
     background: transparent !important;
-  }
-
-  .v-application code {
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
   }
 
   .home-wrap {
     margin: 10vh auto !important;
     font-size: 20px !important;
-    color: transparent !important;
   }
  </style>
