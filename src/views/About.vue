@@ -6,8 +6,8 @@
         <figure class="photo-section">
             <v-img src="@/assets/profie_photo.jpg" class="profile-img"/>
         </figure>
-        <section>
-            <p class="description-section">My name is Tomas. I am a Dev-Ops Engineer based in Lithuania. I am a seasoned
+        <section class="description-section">
+            <p >My name is Tomas. I am a Dev-Ops Engineer based in Lithuania. I am a seasoned
                 expert that has introduced and deployed solutions that scale from thousands of users to millions of users. I
                 specialise in web server infrastructure, continuous integration and delivery solutions, workload
                 automatisation and optimisation.
@@ -47,18 +47,16 @@
     .photo-section {
         width: 27%;
         float: left;
-        height: 100%;
         margin-top: 30px;
     }
 
     .description-section {
         width: 35%;
         float: left;
-        height: 100%;
         margin-top: 30px;
         text-align: start;
         padding: 0 20px 0 20px;
-        color: white;
+        color: white !important;
         white-space: pre-wrap; /* Since CSS 2.1 */
         white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
         white-space: -o-pre-wrap; /* Opera 7 */
@@ -72,11 +70,10 @@
     .expertise-section {
         width: 35%;
         float: left;
-        height: 100%;
         margin-top: 30px;
         border-left: 2px solid white;
         text-align: start;
-        color: white;
+        color: white !important;
         white-space: pre-wrap; /* Since CSS 2.1 */
         white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
         white-space: -o-pre-wrap; /* Opera 7 */
@@ -102,7 +99,6 @@
             border-left: none;
             padding-top: 30px;
             width: 70%;
-            height: 100%;
             color: white;
             white-space: pre-wrap; /* Since CSS 2.1 */
             white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
@@ -122,7 +118,6 @@
         }
 
         .description-section {
-            border-bottom: 2px solid white;
             width: 80%;
             margin-left: 40px;
             padding-bottom: 40px;
