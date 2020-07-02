@@ -9,8 +9,8 @@
         </head>
 
         <h1 class="header">blog:</h1>
-        <div class="blog-wrap">
-        <div class="blog-container" v-for="post in posts" v-bind:key="post.id">
+        <main class="blog-wrap">
+        <section class="blog-container" v-for="post in posts" v-bind:key="post.id">
             <v-card v-bind:to="getBlogURL(post.id)" link hover
                     class="blog-card">
                 <v-img
@@ -25,8 +25,8 @@
                     <div>{{post.content}}</div>
                 </v-card-text>
             </v-card>
-        </div>
-        </div>
+        </section>
+        </main>
     </div>
 </template>
 

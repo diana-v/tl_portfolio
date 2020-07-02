@@ -8,24 +8,24 @@
         <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
     </head>
         <h1 class="header">services:</h1>
-        <div class="container services-container">
-            <div class="row services-row">
-                <div class="col-sm-4 services-title">Game Servers:</div>
-                <div class="col-sm-8">quake.e0.lt and mc.e0.lt</div>
-            </div>
-            <div class="row services-row">
-                <div class="col-sm-4 services-title">CI/CD:</div>
-                <div class="col-sm-8">gitlab.e0.lt</div>
-            </div>
-            <div class="row services-row">
-                <div class="col-sm-4 services-title">Monitoring (WIP):</div>
-                <div class="col-sm-8">logs.e0.lt</div>
-            </div>
-            <div class="row services-row">
-                <div class="col-sm-4 services-title">URL Shortener (WIP):</div>
-                <div class="col-sm-8">u.e0.lt</div>
-            </div>
-        </div>
+        <main class="container services-container">
+            <section class="row services-row">
+                <h5 class="col-sm-4 services-title">Game Servers:</h5>
+                <p class="col-sm-8">quake.e0.lt and mc.e0.lt</p>
+            </section>
+            <section class="row services-row">
+                <h5 class="col-sm-4 services-title">CI/CD:</h5>
+                <p class="col-sm-8">gitlab.e0.lt</p>
+            </section>
+            <section class="row services-row">
+                <h5 class="col-sm-4 services-title">Monitoring (WIP):</h5>
+                <p class="col-sm-8">logs.e0.lt</p>
+            </section>
+            <section class="row services-row">
+                <h5 class="col-sm-4 services-title">URL Shortener (WIP):</h5>
+                <p class="col-sm-8">u.e0.lt</p>
+            </section>
+        </main>
     </div>
 </template>
 

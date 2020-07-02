@@ -1,15 +1,15 @@
 <template>
-    <a class="about">
+    <div class="about">
         <head>
-        <vue-headful title="Contact"/>
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
-        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-        <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+            <vue-headful title="Contact"/>
+            <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png"/>
+            <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png"/>
+            <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32"/>
+            <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16"/>
         </head>
         <h1 class="header">contact me:</h1>
-        <div class="contact-ways">
-            <div class="contact-icon-section">
+        <main class="contact-ways">
+            <section class="contact-icon-section">
                 <a target="_blank" href="https://github.com/tomaslesc">
                     <v-icon class="contact-icon" size="50">fab fa-github</v-icon>
                 </a>
@@ -19,9 +19,9 @@
                 <a v-on:click="clippy" v-on="on">
                     <v-icon class="contact-icon" size="50">fas fa-envelope</v-icon>
                 </a>
-            </div>
+            </section>
 
-            <div class="contact-link-section">
+            <section class="contact-link-section">
                 <div class="contact-link-wrapper"><a target="_blank" class="contact-link"
                                                      href="https://github.com/tomaslesc">GitHub</a></div>
                 <div class="contact-link-wrapper"><a target="_blank" class="contact-link"
@@ -35,10 +35,10 @@
                     </v-tooltip>
                     <input type="email" style="display:none" id="clipboard" value="tom@e0.lt">
                 </div>
-            </div>
-        </div>
+            </section>
+        </main>
 
-        <div class="contact-form">
+        <section class="contact-form">
             <form>
                 <v-text-field class="contact-field"
                               v-model="name"
@@ -76,8 +76,8 @@
                     Your message was successfully sent.
                 </v-alert>
             </div>
-        </div>
-    </a>
+        </section>
+    </div>
 </template>
 
 <script>
@@ -117,12 +117,13 @@
                 this.$http.post(this.$contact_url, {
                     name: this.name,
                     email: this.email,
-                    message: this.message})
-                    .then(()=> {
+                    message: this.message
+                })
+                    .then(() => {
                         this.c_error = false;
                         this.c_success = true;
                     })
-                    .catch((error)=> {
+                    .catch((error) => {
                         this.c_error = true;
                         this.c_error_msg = error.response.data;
                     })
@@ -216,7 +217,7 @@
     }
 
     .contact-link:hover {
-        border-bottom: 3px solid white;
+        border-bottom: 3px solid #2391e8;
         cursor: pointer;
     }
 

@@ -1,9 +1,9 @@
 <template>
     <v-app>
-        <div>
+        <nav>
             <v-toolbar>
                 <v-toolbar-title>
-                    <router-link to="/">
+                    <router-link to="/" aria-label="Link to home page">
                         <v-img class="mr-3" src="@/assets/tl_logo.png" height="40px" width="50px"></v-img>
                     </router-link>
                 </v-toolbar-title>
@@ -18,7 +18,9 @@
                     <v-menu offset-y>
                         <template v-slot:activator="{ on }">
                             <v-btn class="d-block d-md-none"
-                                   v-on="on">
+                                   v-on="on"
+                                   aria-label="Menu"
+                            >
                                 <v-icon class="material-icons">menu_open</v-icon>
                             </v-btn>
                         </template>
@@ -34,7 +36,7 @@
                     </v-menu>
                 </v-toolbar-items>
             </v-toolbar>
-        </div>
+        </nav>
         <router-view></router-view>
     </v-app>
 </template>

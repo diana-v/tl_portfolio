@@ -7,22 +7,20 @@
             <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
             <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
         </head>
-        <div class="timeline-container">
-        <div>
+        <main class="timeline-container">
             <v-timeline :reverse="reverse" :dense="$vuetify.breakpoint.smAndDown">
                 <v-timeline-item class="timeline-item"
-                        v-for="n in timeline"
+                        v-for="(time, n) in timeline"
                         :key="n"
                 >
-                    <span slot="opposite" class="timeline-year">{{n.year}}</span>
+                    <span slot="opposite" class="timeline-year">{{time.year}}</span>
                     <v-card class="elevation-2 timeline-card">
-                        <v-card-title class="headline">{{n.title}}</v-card-title>
-                        <v-card-text class="timeline-text">{{n.content}}</v-card-text>
+                        <v-card-title class="headline">{{time.title}}</v-card-title>
+                        <v-card-text class="timeline-text">{{time.content}}</v-card-text>
                     </v-card>
                 </v-timeline-item>
             </v-timeline>
-        </div>
-        </div>
+        </main>
     </div>
 </template>
 
@@ -38,7 +36,7 @@
     }
     @keyframes fadein{
         0% { opacity:0; }
-        66% { opacity:0; }
+        66% { opacity:1; }
         100% { opacity:1; }
     }
 

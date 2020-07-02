@@ -2,19 +2,21 @@
     <div>
         <head>
             <vue-headful title="Blog Entry"/>
-            <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
-            <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
-            <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-            <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+            <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png"/>
+            <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png"/>
+            <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32"/>
+            <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16"/>
         </head>
-    <h1 class="blog-header">{{entry.title}}</h1>
-    <h4 class="blog-subheader">{{entry.date.date}}</h4>
-    <div class="blog-entry-image-container">
-        <img class="blog-entry-image"
-             v-bind:src=getImageURL(entry.image)
-        >
-    </div>
-    <p class="blog-text">{{entry.content}}</p>
+        <h1 class="blog-header">{{entry.title}}</h1>
+        <h4 class="blog-subheader">{{entry.date.date}}</h4>
+        <figure class="blog-entry-image-container">
+            <img class="blog-entry-image"
+                 v-bind:src=getImageURL(entry.image)
+            >
+        </figure>
+        <article>
+            <p class="blog-text">{{entry.content}}</p>
+        </article>
     </div>
 </template>
 
@@ -27,15 +29,15 @@
         ),
         mounted() {
             let url = `${this.$backend}/api/blog/${this.$route.params.id}`;
-            this.$http({ method: "GET", "url": url }).then(result => {
+            this.$http({method: "GET", "url": url}).then(result => {
                 this.entry = result.data;
             }, error => {
                 console.error(error);
             });
         },
-        methods:{
-            getImageURL(link){
-                if (link==null) {
+        methods: {
+            getImageURL(link) {
+                if (link == null) {
                     return "https://cdn.pixabay.com/photo/2018/09/03/22/05/programming-3652497_1280.jpg";
                 } else {
                     return link;

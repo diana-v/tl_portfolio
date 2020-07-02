@@ -1,36 +1,43 @@
 <template>
     <div>
         <head>
-        <vue-headful title="About"/>
-            <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
-            <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
-            <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-            <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+            <vue-headful title="About"/>
+            <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png"/>
+            <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png"/>
+            <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32"/>
+            <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16"/>
         </head>
         <header>
             <h1 class="header">about me:</h1>
         </header>
-        <div class="photo-section">
+        <figure class="photo-section">
             <v-img src="@/assets/profie_photo.jpg" class="profile-img"/>
-        </div>
-        <p class="description-section">My name is Tomas. I am a Dev-Ops Engineer based in Lithuania. I am a seasoned expert that has introduced and deployed solutions that scale from thousands of users to millions of users. I specialise in web server infrastructure, continuous integration and delivery solutions, workload automatisation and optimisation.
-    </p>
-        <div class="expertise-section">
-        <ul>
-            <li>Experience:</li>
-            <li>Dev-Ops Engineer at NFQ: Feb 2019 - Present</li>
-            <li>PHP Programmer at Enigma Software: Dec 2012 - Feb 2019</li>
-        </ul>
-        <ul>
-            <li>Education:</li>
-            <li>Kaunas University of Technology</li>
-            <li>BSc Information Technology: 2012-2016 </li>
-        </ul>
-         <ul>
-             <li>Certifications:</li>
-             <li>Zend Certified PHP Engineer: Issued Jan 2017, Credential ID: <a target="_blank" href="https://www.zend-zce.com/en/yellow-pages/ZEND029620">ZEND29620</a></li>
-         </ul>
-      </div>
+        </figure>
+        <section>
+            <p class="description-section">My name is Tomas. I am a Dev-Ops Engineer based in Lithuania. I am a seasoned
+                expert that has introduced and deployed solutions that scale from thousands of users to millions of users. I
+                specialise in web server infrastructure, continuous integration and delivery solutions, workload
+                automatisation and optimisation.
+            </p>
+        </section>
+        <section class="expertise-section">
+            <ul>
+                <li>Experience:</li>
+                <li>Dev-Ops Engineer at NFQ: Feb 2019 - Present</li>
+                <li>PHP Programmer at Enigma Software: Dec 2012 - Feb 2019</li>
+            </ul>
+            <ul>
+                <li>Education:</li>
+                <li>Kaunas University of Technology</li>
+                <li>BSc Information Technology: 2012-2016</li>
+            </ul>
+            <ul>
+                <li>Certifications:</li>
+                <li>Zend Certified PHP Engineer: Issued Jan 2017, Credential ID: <a target="_blank"
+                                                                                    href="https://www.zend-zce.com/en/yellow-pages/ZEND029620">ZEND29620</a>
+                </li>
+            </ul>
+        </section>
     </div>
 </template>
 
@@ -84,7 +91,7 @@
         word-wrap: break-word; /* Internet Explorer 5.5+ */
     }
 
-    @media screen and (max-width:855px) {
+    @media screen and (max-width: 855px) {
         .description-section {
             width: 60%;
             padding-top: 7%;
@@ -111,7 +118,8 @@
             word-wrap: break-word; /* Internet Explorer 5.5+ */
         }
     }
-    @media screen and (max-width:600px) {
+
+    @media screen and (max-width: 600px) {
         .expertise-section {
             display: initial;
             width: 70%;
@@ -120,12 +128,14 @@
             padding-top: 30px;
             border: none;
         }
+
         .description-section {
             border-bottom: 2px solid white;
             width: 80%;
             margin-left: 40px;
             padding-bottom: 40px;
         }
+
         .photo-section {
             width: 70%;
         }
