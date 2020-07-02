@@ -3,22 +3,22 @@
         <h1 class="header">contact me:</h1>
         <main class="contact-ways">
             <section class="contact-icon-section">
-                <a target="_blank" href="https://github.com/tomaslesc">
+                <a target="_blank" href="https://github.com/tomaslesc" aria-label="Github link" rel="noreferrer">
                     <v-icon class="contact-icon" size="50">fab fa-github</v-icon>
                 </a>
-                <a target="_blank" href="https://www.linkedin.com/in/tomaslesc/">
+                <a target="_blank" href="https://www.linkedin.com/in/tomaslesc/" aria-label="LinkedIn link" rel="noreferrer">
                     <v-icon class="contact-icon" size="50">fab fa-linkedin</v-icon>
                 </a>
-                <a v-on:click="clippy" v-on="on">
+                <a v-on:click="clippy" v-on="on" aria-label="Press here to copy my email to clipboard">
                     <v-icon class="contact-icon" size="50">fas fa-envelope</v-icon>
                 </a>
             </section>
 
             <section class="contact-link-section">
-                <div class="contact-link-wrapper"><a target="_blank" class="contact-link"
-                                                     href="https://github.com/tomaslesc">GitHub</a></div>
-                <div class="contact-link-wrapper"><a target="_blank" class="contact-link"
-                                                     href="https://www.linkedin.com/in/tomaslesc/">LinkedIn</a></div>
+                <div class="contact-link-wrapper"><a target="_blank" class="contact-link" aria-label="Github link"
+                                                     href="https://github.com/tomaslesc" rel="noreferrer">GitHub</a></div>
+                <div class="contact-link-wrapper"><a target="_blank" class="contact-link" aria-label="LinkedIn link"
+                                                     href="https://www.linkedin.com/in/tomaslesc/" rel="noreferrer">LinkedIn</a></div>
                 <div class="contact-link-wrapper">
                     <v-tooltip bottom>
                         <template v-slot:activator="{ on }">

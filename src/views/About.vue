@@ -26,7 +26,7 @@
             </ul>
             <ul>
                 <li>Certifications:</li>
-                <li>Zend Certified PHP Engineer: Issued Jan 2017, Credential ID: <a target="_blank"
+                <li>Zend Certified PHP Engineer: Issued Jan 2017, Credential ID: <a target="_blank" rel="noreferrer"
                                                                                     href="https://www.zend-zce.com/en/yellow-pages/ZEND029620">ZEND29620</a>
                 </li>
             </ul>
