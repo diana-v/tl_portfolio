@@ -1,10 +1,10 @@
 <template>
     <v-app>
-        <nav>
+        <main>
             <v-toolbar>
                 <v-toolbar-title>
                     <router-link to="/" aria-label="Link to home page">
-                        <v-img class="mr-3" src="@/assets/tl_logo.png" height="40px" width="50px"></v-img>
+                        <v-img class="mr-3" src="@/assets/tl_logo.png" height="40px" width="50px" aria-label="Link to home page"></v-img>
                     </router-link>
                 </v-toolbar-title>
                 <v-spacer></v-spacer>
@@ -36,7 +36,7 @@
                     </v-menu>
                 </v-toolbar-items>
             </v-toolbar>
-        </nav>
+        </main>
         <router-view></router-view>
     </v-app>
 </template>

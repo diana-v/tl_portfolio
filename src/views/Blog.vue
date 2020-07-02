@@ -2,30 +2,26 @@
     <div class="blog">
         <head>
             <vue-headful title="Blog"/>
-            <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
-            <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
-            <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-            <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
         </head>
 
         <h1 class="header">blog:</h1>
         <main class="blog-wrap">
-        <section class="blog-container" v-for="post in posts" v-bind:key="post.id">
-            <v-card v-bind:to="getBlogURL(post.id)" link hover
-                    class="blog-card">
-                <v-img
-                        class="white--text align-end"
-                        height="200px"
-                       v-bind:src="getImageURL(post.image)"
-                >
-                </v-img>
-                <v-card-title class="blog-card-title">{{post.title}}</v-card-title>
-                <v-card-subtitle class="pb-0 blog-card-subtitle">{{post.date.date}}</v-card-subtitle>
-                <v-card-text class="text--primary">
-                    <div>{{post.content}}</div>
-                </v-card-text>
-            </v-card>
-        </section>
+            <section class="blog-container" v-for="post in posts" v-bind:key="post.id">
+                <v-card v-bind:to="getBlogURL(post.id)" link hover
+                        class="blog-card">
+                    <v-img
+                            class="white--text align-end"
+                            height="200px"
+                            v-bind:src="getImageURL(post.image)"
+                    >
+                    </v-img>
+                    <v-card-title class="blog-card-title">{{post.title}}</v-card-title>
+                    <v-card-subtitle class="pb-0 blog-card-subtitle">{{post.date.date}}</v-card-subtitle>
+                    <v-card-text class="text--primary">
+                        <div>{{post.content}}</div>
+                    </v-card-text>
+                </v-card>
+            </section>
         </main>
     </div>
 </template>
@@ -38,21 +34,24 @@
             }
         ),
         mounted() {
-            this.$http({ method: "GET", "url": `${this.$backend}/api/blog` }).then(result => {
-                this.posts = result.data;
-            }, error => {
-                console.error(error);
-            });
+            this.$http({method: "GET", "url": `${this.$backend}/api/blog`})
+                .then(result => {
+                    this.posts = result.data;
+                })
+                .catch((error) => {
+                    /* eslint-disable-next-line no-console */
+                    console.error(error);
+                })
         },
-        methods:{
-            getImageURL(link){
-                if (link==null) {
+        methods: {
+            getImageURL(link) {
+                if (link == null) {
                     return "https://cdn.pixabay.com/photo/2018/09/03/22/05/programming-3652497_1280.jpg";
                 } else {
                     return link;
                 }
             },
-            getBlogURL(id){
+            getBlogURL(id) {
                 return `/blog/${id}`;
             }
         },
