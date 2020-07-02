@@ -25,11 +25,14 @@
         ),
         mounted() {
             let url = `${this.$backend}/api/blog/${this.$route.params.id}`;
-            this.$http({method: "GET", "url": url}).then(result => {
-                this.entry = result.data;
-            }, error => {
-                console.error(error);
-            });
+            this.$http({method: "GET", "url": url})
+                .then(result => {
+                    this.posts = result.data;
+                })
+                .catch((error) => {
+                    /* eslint-disable-next-line no-console */
+                    console.error(error);
+                })
         },
         methods: {
             getImageURL(link) {
