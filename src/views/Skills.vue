@@ -53,6 +53,7 @@
     .timeline-text {
         font-size: 16px;
         white-space: pre-line;
+        color: white !important;
     }
 
     .timeline-year {
