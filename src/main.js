@@ -22,6 +22,15 @@ Vue.config.productionTip = false;
 Vue.use(BootstrapVue);
 Vue.use(TooltipPlugin);
 
+import(/* webpackPreload: true */ "./views/About");
+import(/* webpackPreload: true */ "./views/Blog");
+import(/* webpackPreload: true */ "./views/BlogEntry");
+import(/* webpackPreload: true */ "./views/Contact");
+import(/* webpackPreload: true */ "./views/Home");
+import(/* webpackPreload: true */ "./views/Services");
+import(/* webpackPreload: true */ "./views/Skills");
+import(/* webpackPreload: true */ "./App");
+
 Vue.use(vuetify);
 
 Vue.prototype.$http = axios;
