@@ -7,10 +7,12 @@
             <v-img src="@/assets/profie_photo.jpg" class="profile-img"/>
         </figure>
         <section class="description-section">
-            <p >My name is Tomas. I am a Dev-Ops Engineer based in Lithuania. I am a seasoned
-                expert that has introduced and deployed solutions that scale from thousands of users to millions of users. I
-                specialise in web server infrastructure, continuous integration and delivery solutions, workload
-                automatisation and optimisation.
+            <p >After getting a hand of what it takes to create a project
+                I've decided to see what it takes to get it to production.
+                Infrastructure as code is my specialty and automation is key to system autonomy.
+                Project portfolio consist of solutions that are currently being used in projects that 
+                scale from thousands to millions of users, I specialise in web server infrastructure,
+                continuous integration and delivery solutions, workload automatization and optimization.
             </p>
         </section>
         <section class="expertise-section">

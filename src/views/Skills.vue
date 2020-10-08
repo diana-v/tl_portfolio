@@ -16,51 +16,6 @@
         </main>
     </div>
 </template>
-
-<style>
-    .timeline-container {
-        margin-right: 30px;
-        margin-left: 30px;
-    }
-
-    .timeline-item {
-        -webkit-animation: 3s ease 0s normal forwards 1 fadein;
-        animation: 3s ease 0s normal forwards 1 fadein;
-    }
-    @keyframes fadein{
-        0% { opacity:0; }
-        40% { opacity:1; }
-        100% { opacity:1; }
-    }
-
-    @-webkit-keyframes fadein {
-        0% {
-            opacity: 0;
-        }
-        40% {
-            opacity: 1;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-
-    .timeline-card {
-        text-align: start;
-    }
-
-    .timeline-text {
-        font-size: 16px;
-        white-space: pre-line;
-        color: white !important;
-    }
-
-    .timeline-year {
-        font-size: 30px;
-        color: #2196f3;
-    }
-</style>
-
 <script>
     export default {
         data: () => ({
@@ -133,6 +88,12 @@
                     content: 'Lightweight implementation of CI&CD\n' +
                         'Webserver hosting the content listening to webhooks for update, used for fast prototyping and self-hosted third party services.'
                 },
+                {
+                    title: 'Monitoring',
+                    year: '2020',
+                    content: 'TIG Stack\n' +
+                        'Created a self hosted TIG stack to monitor internal websites. Surprisingly helpful to know when electricity is gone...'
+                },
             ],
             timeline: []
         }),
@@ -151,3 +112,47 @@
         }
     };
 </script>
+<style>
+    .timeline-container {
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+
+    .timeline-item {
+        -webkit-animation: 3s ease 0s normal forwards 1 fadein;
+        animation: 3s ease 0s normal forwards 1 fadein;
+    }
+    @keyframes fadein{
+        0% { opacity:0; }
+        40% { opacity:1; }
+        100% { opacity:1; }
+    }
+
+    @-webkit-keyframes fadein {
+        0% {
+            opacity: 0;
+        }
+        40% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .timeline-card {
+        text-align: start;
+    }
+
+    .timeline-text {
+        font-size: 16px;
+        white-space: pre-line;
+        color: white !important;
+    }
+
+    .timeline-year {
+        font-size: 30px;
+        color: #2196f3;
+    }
+</style>
+

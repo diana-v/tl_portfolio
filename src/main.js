@@ -10,6 +10,7 @@ import TooltipPlugin from 'bootstrap-vue';
 import "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
 import "prismjs/components/prism-scss.min";
+import "prismjs/components/prism-hcl.min";
 import "prismjs/plugins/autolinker/prism-autolinker.min";
 import "prismjs/plugins/autolinker/prism-autolinker.css";
 import Prism from "vue-prism-component";
