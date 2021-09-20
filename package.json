@@ -17,7 +17,7 @@
     "bootstrap": "^4.5.0",
     "bootstrap-vue": "^2.15.0",
     "css-loader": "^3.6.0",
-    "prismjs": "^1.19.0",
+    "prismjs": "^1.25.0",
     "prismjs-tomorrow-theme": "0.0.1",
     "vue": "^2.6.11",
     "vue-headful": "^2.1.0",
